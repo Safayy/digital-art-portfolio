@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Outfit:wght@100;300;400;600&family=Poppins:wght@100;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins','Arial',sans-serif;
+    background-color: rgb(198, 229, 237);
+}
+/*Colors*/
+:root {
+    --white: #fff;
+    --bluelight: #0F374F;
+    --bluedark: #508CAF;
+    --yellow: #FFCD29;
+}
+
+/* nav */
+nav {
+    background-color: rgb(154, 35, 35);
+}
+nav ul{
+    list-style-type: none;
+    overflow: hidden;
+}
+nav ul li{
+    float: right;
+    padding-right: 2em;
+}
+nav ul li a{
+    color: var(--bluedark);
+    text-decoration: none;
+}
+/* hero */
+.hero {
+    display: grid;
+    grid-template-columns: auto auto;
+    height: 500px; /* TODO fix hard coded */
+    padding: 0;
+    margin: 0;
+}
+/* hero-left */
+.hero-left {
+    background-color: var(--bluedark);
+}
+.hero .hero-left .hero-left-title{
+    /* color: var(--white); */
+}
+/* hero-right */
+.hero-right {
+    background-color: var(--white);
+}
