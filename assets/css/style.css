@@ -1,23 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Outfit:wght@100;300;400;600&family=Poppins:wght@100;700&display=swap');
+
+/* colors */
+:root {
+    --white: #fff;
+    --blue-dark: #0F374F;
+    --blue-light: #508CAF;
+    --yellow: #FFCD29;
+}
+/* reset */
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins','Arial',sans-serif;
-    background-color: rgb(198, 229, 237);
+    font-family: 'Poppins', 'Arial', sans-serif;
+    box-sizing: border-box;
 }
-/*Colors*/
-:root {
-    --white: #fff;
-    --bluelight: #0F374F;
-    --bluedark: #508CAF;
-    --yellow: #FFCD29;
-}
-
-/* nav */
-nav {
-    background-color: rgb(154, 35, 35);
-}
+/********** NAVBAR **********/
 nav ul{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
     list-style-type: none;
     overflow: hidden;
 }
@@ -26,25 +28,43 @@ nav ul li{
     padding-right: 2em;
 }
 nav ul li a{
-    color: var(--bluedark);
+    color: var(--blue-dark);
     text-decoration: none;
 }
-/* hero */
-.hero {
-    display: grid;
-    grid-template-columns: auto auto;
-    height: 500px; /* TODO fix hard coded */
-    padding: 0;
-    margin: 0;
+/********** HERO **********/
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 90vh;
 }
-/* hero-left */
-.hero-left {
-    background-color: var(--bluedark);
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
-.hero .hero-left .hero-left-title{
-    /* color: var(--white); */
+.intro {background-color: var(--blue-light);}
+.drawer {background-color: var(--white);}
+/********** FOOTER **********/
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
 }
-/* hero-right */
-.hero-right {
-    background-color: var(--white);
+
+
+
+
+
+
+/********** MEDIA QUERIES **********/
+@media (min-width: 700px) {
+    /********** NAVBAR **********/
+
+    /********** HERO **********/
+    .row {float:none}
 }
+@media screen and (min-width: 480px) {
+    #leftsidebar {width: 200px; float: left;}
+    #main {margin-left: 216px;}
+  }
