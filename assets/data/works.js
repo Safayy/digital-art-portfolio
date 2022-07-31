@@ -1,5 +1,5 @@
 export default [
-    "demo url 1",
+    "./art-samples/",
     "demo url 2",
     "demo url 3",
     "demo url 4",

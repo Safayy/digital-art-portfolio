@@ -6,15 +6,42 @@
     --blue-dark: #0F374F;
     --blue-light: #508CAF;
     --yellow: #FFCD29;
+    --gray-dark: #77826B;
+    --gray-medium: #DBDBDB;
+    --gary-light: #F3F5F6;
 }
-/* reset */
+
+/* reset + defaults*/
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', 'Arial', sans-serif;
     box-sizing: border-box;
+    font-size: 10px;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+h2{
+    letter-spacing: 0.5rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 6rem; /* 9rem  */
+    text-align: left;
+    color: white;
+    padding-left: 2rem;
+    font-weight: 300;
 }
 /********** NAVBAR **********/
+.nav-close, .nav-open{
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    padding: 5px;
+    visibility: hidden; /*??? display hidden*/
+    color: var(--blue-light);
+}
+nav {
+    z-index: 8;
+}
 nav ul{
     position: absolute;
     top: 0;
@@ -22,29 +49,214 @@ nav ul{
     background-color: transparent;
     list-style-type: none;
     overflow: hidden;
+    visibility: visible;
 }
 nav ul li{
-    float: right;
-    padding-right: 2em;
+    float: left;
+    padding-right: 2rem;
 }
 nav ul li a{
     color: var(--blue-dark);
     text-decoration: none;
+    font-size: 3rem;
 }
+
 /********** HERO **********/
-.column {
-    float: left;
+.hero{
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+}
+.intro{
+    flex: 0.5;
+    width: 50vw;
+    background-color: var(--blue-light);
+    padding: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.intro-title, .intro-subtext{
+    letter-spacing: 0rem;
+    line-height: 1.1; 
+}
+.intro-title{
+    letter-spacing: 0.5rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 9rem; /* 9rem  */
+    text-align: left;
+    color: white;
+    font-weight: 300;
+}
+.intro-subtext {
+    color: var(--gray-medium);
+    display: block;
+    text-align: right;
+    font-size: 5rem;
+    white-space: nowrap;
+}
+@media (max-width:1200px){
+    .intro-subtext{
+        font-size: 3rem;
+    }
+    .intro-socials li a i{
+        font-size: 2rem;
+    }
+}
+@media (max-width: 900px){
+    .intro{
+        padding: 2rem;
+    }
+}
+@media (max-width: 700px) {
+    .hero {
+        flex-direction: column;
+    }
+    .intro {
+        width: 100vw;
+        flex: 0.4;
+    }
+    .preview {
+        flex: 0.6;
+    }
+}
+.intro-socials{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    /* margin: 3rem */
+    /* background-color: red; */
+}
+.intro-socials li{
+    list-style: none;    
+}
+.intro-socials li a i{
+    font-size: 6rem;
+    /* color: black; */
+    color: var(--yellow);
+}
+/*** PREVIEW ***/
+.preview {
+    /* background-color: var(--white); */
+    background-color: rgb(219, 231, 240);
+    flex: 1;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.art-top, .art-bot{
+    z-index: 9;
+}
+.art-top{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.art-bot{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+}
+.slideshow-container{
+    /* background-color: red; */
+    margin: auto auto;
+    /* margin-bottom: 3rem; */
+}
+.slideshow{
+    background-color: var(--yellow);
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    border-radius: 50%;
+    /* margin-bottom: 4rem; */
+    position: relative;
+}
+.sign{
     width: 50%;
-    padding: 10px;
-    height: 90vh;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 6;
 }
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+.slide{
+    position: relative;
+    display: none;
 }
-.intro {background-color: var(--blue-light);}
-.drawer {background-color: var(--white);}
+.slide img{
+    width: 100%;
+}
+.background{
+    position: absolute;
+    top: -5rem;
+    left: 0;
+    filter: brightness(0) saturate(100%)invert(100%) sepia(0%) saturate(20%) hue-rotate(40deg) brightness(109%) contrast(101%);
+    z-index: 4;
+}
+.foreground{
+    z-index: 5;
+    position: absolute;
+    top: -1rem;
+    right: 50px;
+}
+
+.slideshow-traverser{
+    width: 100%;
+    text-align: center;
+}
+.dot{
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+/********** CHARACTER CATALOG **********/
+.catalog{
+    height: 100vh;
+    background-color: var(--yellow);
+}
+.catalog h2{
+    color: var(--blue-dark)
+}
+/********** WORKS **********/
+.works{
+    height: 100vh;
+    background-color: #93b173; /* var(--gary-light); */
+}
+.works-list{
+    background-color: red;
+    /* height: ; */
+}
+.works h2{
+    color: var(--gary-light); /* var(--gray-dark) */
+    /* color: #77826B; */
+}
+/********** COMMISIONS **********/
+.commisions{
+    height: 100vh;
+    background-color: var(--blue-light);
+}
+.commisions h2{
+    color: var(--white)
+}
 /********** FOOTER **********/
 .footer {
     padding: 20px;
@@ -53,13 +265,37 @@ nav ul li a{
 }
 
 /********** MEDIA QUERIES **********/
-@media (min-width: 700px) {
+@media (max-width: 700px) {
     /********** NAVBAR **********/
-
+    nav ul{
+        width: 0vw; /* nav drawer closed by default */
+        height: 100vh;
+        transition: 1s;
+        background-color: var(--blue-dark);
+    }
+    nav ul li{
+        text-align: center;
+        float: none;
+        display: block;
+    }
+    nav ul li a{
+        line-height: 3em;
+        color: var(--white);
+        text-decoration: none;
+    }
+    .nav-open{
+        visibility: visible;
+    }
     /********** HERO **********/
-    .row {float:none}
+    .hero {float:none}
 }
-@media screen and (min-width: 480px) {
-    #leftsidebar {width: 200px; float: left;}
-    #main {margin-left: 216px;}
-  }
+
+/*
+TODO
+bug
+    navlink -> when minimize nav in mobile view, nav disapears in desktop view
+    navbar below .hero
+    intro padding 10px makes fullscreen mode not pefect 50% 50%
+
+
+*/
