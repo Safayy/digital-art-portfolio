@@ -6,7 +6,7 @@
     <link href="assets/imgs/favicon.png" rel="icon">
     <link href="./assets/css/style.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/5fe0a34c2d.js" crossorigin="anonymous"></script>
-    <title>xxxx shop</title>
+    <title>keyrinq shop</title>
 </head>
 <body >
     <!--------- NAVBAR --------->
@@ -41,25 +41,10 @@
             <img class="art-bot" src="./assets/imgs/lines.svg"/>
             <span></span> <!--IMPORTANT-->
             <div class="slideshow-container">
-                 <div class="slideshow">
+                 <div class="slideshow" id="slideshow"/>
                     <img class="sign" src="./assets/imgs/sign.png"/>
-                    <div class="slide">
-                        <img class="foreground" src="./assets/data/art/mug1.png"/>
-                        <img class="background" src="./assets/data/art/mug1.png"/>
-                    </div>
-                    <div class="slide">
-                        <img class="foreground" src="./assets/data/art/mug2.png"/>
-                        <img class="background" src="./assets/data/art/mug2.png"/>
-                    </div>
-                    <div class="slide">
-                        <img class="foreground" src="./assets/data/art/mug3.png"/>
-                        <img class="background" src="./assets/data/art/mug3.png"/>
-                    </div>
                 </div> 
-                <div class="slideshow-traverser">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
+                <div class="slideshow-traverser" id="this">
                 </div>
             </div>
         </div>
@@ -67,28 +52,43 @@
     <!--------- CHARACTER CATALOG --------->
     <div class="catalog">
         <h2 class="subeading">character catalog</h2>
+        <div class="catalog-container">
+            <div class="char-item">
+                <h3 class="char-name">Rebecca White</h3>
+                 
+                 <div class="char-content">
+                    <div class="char-left">
+                        <img src="./assets/data/art/char1-face.png"/>
+                        <h4>Story</h4>
+                        <p class="char-desc">Est consectetur labore dolor cupidatat ex est qui laborum laborum in duis aliquip nostrud. Eu nulla ad excepteur dolor nostrud amet elit sunt incididunt cupidatat excepteur</p>
+                        
+                    </div>
+                    <div class="char-right">
+                        <img class="char-body" src="./assets/data/art/char1-body.png"/>
+                        <span class="prompt">dob:</span><span class="answer">15/5/1</span><br/>
+                        <span class="prompt">origin:</span><span class="answer">nexus</span><br/>
+                        <span class="prompt">hobbies:</span><span class="answer">murder</span><br/>
+                        <span class="prompt">kill count:</span><span class="answer">2342</span><br/>
+                    </div>
+                </div>
+                <button class="adopt-btn">Adopt</button>
+            </div>
+            <div class="char-item">b</div>
+            <div class="char-item">c</div>
+            <div class="char-item">d</div>
+            <div class="char-item"></div>
+            <div class="char-item"></div>
+        </div>
     </div>
     <!--------- WORKS --------->
     <div class="works">
         <h2>my works!!!</h2>
-        <div class="works-list">
-            <img src="./assets/data/art/art1.png"/>
-            <img src="./assets/data/art/art2.png"/>
-            <img src="./assets/data/art/art3.png"/>
-            <img src="./assets/data/art/art4.png"/>
-            <img src="./assets/data/art/art5.png"/>
-            <img src="./assets/data/art/art6.png"/>
-            <img src="./assets/data/art/art7.png"/>
-            <img src="./assets/data/art/art1.png"/>
-            <img src="./assets/data/art/art1.png"/>
-            <img src="./assets/data/art/art1.png"/>
-            <img src="./assets/data/art/art1.png"/>
-        </div>
+        <div class="works-list" id="works"></div>
     </div>
     <!--------- COMMISIONS --------->
     <div class="commisions">
         <h2>commision me</h2>
     </div>
-    <script src="/assets/js/main.js">
+    <script type="module" src="/assets/js/main.js">
 </body>
 </html>

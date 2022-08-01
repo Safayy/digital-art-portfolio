@@ -9,6 +9,7 @@
     --gray-dark: #77826B;
     --gray-medium: #DBDBDB;
     --gary-light: #F3F5F6;
+    --green: #93b173;
 }
 
 /* reset + defaults*/
@@ -20,14 +21,16 @@
     font-family: 'Poppins', Arial, sans-serif;
     /* transition: 0.5s; */
 }
+h2, h3, h4{
+    font-family: 'Poppins', Arial, sans-serif;
+    color: white;
+    font-weight: 300;
+}
 h2{
     letter-spacing: 0.5rem;
-    font-family: 'Poppins', Arial, sans-serif;
     font-size: 6rem; /* 9rem  */
     text-align: left;
-    color: white;
     padding-left: 2rem;
-    font-weight: 300;
 }
 /********** NAVBAR **********/
 .nav-close, .nav-open{
@@ -227,7 +230,7 @@ nav ul li a{
 .dot{
     height: 15px;
     width: 15px;
-    /* margin: 0 2px; */
+    margin: 0 2px;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
@@ -248,31 +251,109 @@ nav ul li a{
 }
 /********** CHARACTER CATALOG **********/
 .catalog{
-    height: 100vh;
+    padding-bottom: 3rem;
     background-color: var(--yellow);
 }
 .catalog h2{
     color: var(--blue-dark)
 }
+.catalog-container{
+    width: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.char-item{
+    flex-basis: 300px;
+    height: fit-content;
+    /* min-height: 600px; */
+    margin-bottom: 1rem;
+    border: 1px solid color(--blue-dark);
+    width: 100%;
+    /* background-color: var(--green); */
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+}
+.char-name{
+    text-align: center;
+    font-size: 3rem;
+}
+.char-content{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+    flex: 1;
+    position: relative;
+    padding: 1rem;
+}
+.char-left{
+    flex: 0.5;
+}
+.char-left img, .char-right img{
+    width: 100%;
+}
+.char-name,
+.char-left h4, 
+.prompt{
+    font-weight: bold;
+    color: var(--green);
+    /* font-size: 10 */
+}
+.char-left h4{
+
+    font-size: 3rem;
+}
+.char-left p{
+    font-size: 1.5rem; /*large font size can operlap*/
+}
+.adopt-btn{
+    /* position: ive; */
+    /* bottom: 0;
+    left: 50%;*/
+    /* width: fit-content;  */
+
+    width: 150px;
+    margin: auto;
+    height: 30px;
+    border-radius: 500px;
+    background-color: var(--blue-light);
+    border: none;
+}
+.char-right{
+    flex: 0.5;
+}
+.prompt{
+    font-size: 1.5rem;
+    display: inline-block;
+}
+.answer{
+    font-size: 2rem;
+}
 /********** WORKS **********/
 .works{
     min-height: 100vh;
-    background-color: #93b173; /* var(--gary-light); */
+    background-color: var(--green); /* var(--gary-light); */
 }
 .works h2{
     color: var(--gary-light); /* var(--gray-dark) */
 }
 .works-list{
-    background-color: red;
-    width: 80%;
+    background-color: #4a5f33;
+    width: 80vw;
     margin: auto;
     height: 100%;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
 }
 .works-list img{
-    width: 20vw;
+    flex-grow: 1;
+    width: 300px;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
 }
 
 /********** COMMISIONS **********/
@@ -322,6 +403,4 @@ bug
     navlink -> when minimize nav in mobile view, nav disapears in desktop view
     navbar below .hero
     intro padding 10px makes fullscreen mode not pefect 50% 50%
-
-
 */
