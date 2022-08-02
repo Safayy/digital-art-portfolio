@@ -10,9 +10,17 @@
 </head>
 <body >
     <!--------- NAVBAR --------->
-    <nav>
-        <i class="fa-solid fa-xmark nav-close" id="nav-close" onclick="toggleMenu()"></i>
-        <i class="fa-solid fa-bars nav-open" id="nav-open" onclick="toggleMenu()"></i>
+    <i class="fa-solid fa-xmark nav-close shownBtn" id="nav-close"></i>
+    <i class="fa-solid fa-bars nav-open" id="nav-open"></i>
+    <nav id="navbar-mobile" class="nav-mobile">
+        <ul id="navLinks">
+            <li><a href="#contact-me">contact me</a></li>
+            <li><a href="#character-catalog">character catalog</a></li>
+            <li><a href="#works">my works</a></li>
+            <li><a href="#commisions">commision me</a></li>
+        </ul>
+    </nav>
+    <nav class="nav-desktop">
         <ul id="navLinks">
             <li><a href="#contact-me">contact me</a></li>
             <li><a href="#character-catalog">character catalog</a></li>

@@ -115,22 +115,38 @@ for(let i=0; i<workLinks.length;i++){
 document.getElementById("slideshow").innerHTML = slideshowElm;
 document.getElementById("works").innerHTML = workElm;
 
-function talk(){
-   console.log("word");
-}
-
 //********** CREATE NAVBAR : open and close the navigation in mobile mode
-// var navLinks = document.getElementById("navLinks");
+window.onload = function() {
+    document.getElementById("nav-close").onclick = toggleMenu;
+    document.getElementById("nav-open").onclick = toggleMenu;
+};
+document.getElementById("navbar-mobile").style.display = "none";
 function toggleMenu(){ 
-    if(navLinks.style.width == "0vw")
+    let NavBar = document.getElementById("navbar-mobile");
+    let navOpen = document.getElementById("nav-open");
+    let navClose = document.getElementById("nav-close");
+
+    console.log("Visibility = " + NavBar.style.display);
+
+    if (NavBar.style.display == "none")
     {
-        navLinks.style.width = "100vw";
+        navOpen.style.display = "none";
+        navClose.style.display = "block";
+        NavBar.style.display = "block"; 
     }
     else
     {
-        navLinks.style.width = "0vw";
+        navOpen.display = "block";
+        navClose.display = "none";
+        NavBar.style.display = "none";
     }
 }
+
+// fixDesktop( window.matchMedia("(min-screen:700px)") );
+
+// function fixDesktop(x){
+//     if()
+// }
 
 //********** SLIDESHOW AUTOMATION
 let slideIndex = 0;
@@ -147,7 +163,7 @@ for(let i=0; i<document.getElementsByClassName("slide").length; i++){
 }
 document.getElementById("slideshow-traverser").appendChild(parentDiv);
 
-console.log("running")
+
 
 //SHOW SLIDES
 await showSlides();
