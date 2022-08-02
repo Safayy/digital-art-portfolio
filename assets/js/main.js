@@ -10,8 +10,8 @@ let slideshowElm = document.getElementById("slideshow").innerHTML; /* SINCE THIS
 for(let i=0; i<slideLinks.length;i++){
     let item =
         `<div class="slide">
-            <img class="foreground" src="${source}${slideLinks[i]}"/>
-            <img class="background" src="${source}${slideLinks[i]}"/>
+            <img class="foreground unselectable" src="${source}${slideLinks[i]}"/>
+            <img class="background unselectable" src="${source}${slideLinks[i]}"/>
         </div>`;
     slideshowElm += item;
 }
@@ -54,7 +54,8 @@ function char(name, faceLink, bodyLink, story, customTags){
     charContent.className = "char-content";
     charLeft.className = "char-left";
     charRight.className = "char-right";
-    charBody.className = "char-body";
+    charFace.className = "unselectable";
+    charBody.className = "unselectable";
     sPrompt.className = "prompt";
     sAnswer.className = "answer";
     charAdoptBtn.className = "adopt-btn";
@@ -108,14 +109,18 @@ function char(name, faceLink, bodyLink, story, customTags){
 //WORKS ELEMENT
 let workElm = "";
 for(let i=0; i<workLinks.length;i++){
-    let item = `<img src="${source}${workLinks[i]}"/>`;
+    let item = `<img class="unselectable" src="${source}${workLinks[i]}"/>`;
     workElm += item;
 }
 document.getElementById("slideshow").innerHTML = slideshowElm;
 document.getElementById("works").innerHTML = workElm;
 
+function talk(){
+   console.log("word");
+}
+
 //********** CREATE NAVBAR : open and close the navigation in mobile mode
-var navLinks = document.getElementById("navLinks");
+// var navLinks = document.getElementById("navLinks");
 function toggleMenu(){ 
     if(navLinks.style.width == "0vw")
     {
@@ -141,6 +146,8 @@ for(let i=0; i<document.getElementsByClassName("slide").length; i++){
     parentDiv.appendChild(dot);
 }
 document.getElementById("slideshow-traverser").appendChild(parentDiv);
+
+console.log("running")
 
 //SHOW SLIDES
 await showSlides();
