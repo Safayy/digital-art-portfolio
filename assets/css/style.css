@@ -327,7 +327,7 @@ nav ul li a{
 }
 /********** WORKS **********/
 .works{
-    min-height: 100vh;
+    /* min-height: 100vh; */
     background-color: var(--green); /* var(--gary-light); */
     position: relative;
 }
@@ -348,6 +348,7 @@ nav ul li a{
     height: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 .works-list img{
     flex-grow: 1;
