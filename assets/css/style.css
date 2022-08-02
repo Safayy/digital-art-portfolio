@@ -17,9 +17,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 10px;
     font-family: 'Poppins', Arial, sans-serif;
-    /* transition: 0.5s; */
+}
+body{
+    font-size: 10px;
 }
 h2, h3, h4{
     font-family: 'Poppins', Arial, sans-serif;
@@ -27,10 +28,10 @@ h2, h3, h4{
     font-weight: 300;
 }
 h2{
-    letter-spacing: 0.5rem;
-    font-size: 6rem; /* 9rem  */
+    letter-spacing: 0.5em;
+    font-size: 4em; /* 9rem  */
     text-align: left;
-    padding-left: 2rem;
+    padding-left: 2em;
 }
 /********** NAVBAR **********/
 .nav-close, .nav-open{
@@ -70,25 +71,26 @@ nav ul li a{
     display: flex;
     height: 100vh;
     flex-direction: row;
+    font-size: 10px; /*redundent*/
 }
 .intro{
     flex: 0.5;
     width: 50vw;
     background-color: var(--blue-light);
-    padding: 10rem;
+    padding: 10em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: 1;
 }
 .intro-title, .intro-subtext{
-    letter-spacing: 0rem;
+    letter-spacing: 0em;
     line-height: 1.1; 
 }
 .intro-title{
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.5em;
     font-family: 'Poppins', Arial, sans-serif;
-    font-size: 9rem; /* 9rem  */
+    font-size: 9em; /* 9em  */
     text-align: left;
     color: white;
     font-weight: 300;
@@ -97,29 +99,24 @@ nav ul li a{
     color: var(--gray-medium);
     display: block;
     text-align: right;
-    font-size: 5rem;
+    font-size: 5em;
     white-space: nowrap;
 }
 @media (max-width:1400px){
     .intro{
-        padding: 7rem;
+        padding: 7em;
         transition: 0.5s;
-    }
-    *{
         font-size: 7px;
-        transition: 0.5s;
     }
 }
 @media (max-width: 900px){
     .intro{
-        padding: 5rem;
+        padding: 5em;
         transition: 0.5s;
-    }
-    *{
         font-size: 5px;
     }
     .intro-socials{
-        padding-top: 2rem;
+        padding-top: 2em;
     } 
 }
 @media (max-width: 700px) {
@@ -144,7 +141,7 @@ nav ul li a{
     list-style: none;    
 }
 .intro-socials li a i{
-    font-size: 6rem;
+    font-size: 6em;
     /* color: black; */
     color: var(--yellow);
 }
@@ -182,7 +179,7 @@ nav ul li a{
     height: 500px;
     margin: auto;
     border-radius: 50%;
-    margin-bottom: 4rem;
+    margin-bottom: 4em;
     position: relative;
 }
  @media (max-width:1200px){
@@ -222,7 +219,6 @@ nav ul li a{
     top: -1rem;
     right: 50px;
 }
-
 .slideshow-traverser{
     width: 100%;
     text-align: center;
@@ -239,8 +235,6 @@ nav ul li a{
 .active {
     background-color: #717171;
 }
-
-/* Fading animation */
 .fade {
     animation-name: fade;
     animation-duration: 1.5s;
@@ -251,14 +245,14 @@ nav ul li a{
 }
 /********** CHARACTER CATALOG **********/
 .catalog{
-    padding-bottom: 3rem;
+    padding-bottom: 3em;
     background-color: var(--yellow);
+    font-size: 10px;
 }
 .catalog h2{
-    color: var(--blue-dark)
+    color: var(--blue-dark);
 }
 .catalog-container{
-    width: max-content;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -268,18 +262,18 @@ nav ul li a{
     flex-basis: 300px;
     height: fit-content;
     /* min-height: 600px; */
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
     border: 1px solid color(--blue-dark);
     width: 100%;
     /* background-color: var(--green); */
     background-color: var(--white);
     display: flex;
     flex-direction: column;
-    padding-bottom: 1rem;
+    padding-bottom: 1em;
 }
 .char-name{
     text-align: center;
-    font-size: 3rem;
+    /* font-size: 3em; */
 }
 .char-content{
     display: flex;
@@ -288,7 +282,7 @@ nav ul li a{
     height: fit-content;
     flex: 1;
     position: relative;
-    padding: 1rem;
+    padding: 1em;
 }
 .char-left{
     flex: 0.5;
@@ -296,53 +290,59 @@ nav ul li a{
 .char-left img, .char-right img{
     width: 100%;
 }
+.char-left img{
+    border: 1px solid var(--blue-dark);
+    border-radius: 10%;
+}
 .char-name,
 .char-left h4, 
 .prompt{
     font-weight: bold;
     color: var(--green);
-    /* font-size: 10 */
-}
-.char-left h4{
-
-    font-size: 3rem;
+    font-size: 3em;
 }
 .char-left p{
-    font-size: 1.5rem; /*large font size can operlap*/
+    font-size: 1.5em; /*large font size can operlap*/
 }
 .adopt-btn{
-    /* position: ive; */
-    /* bottom: 0;
-    left: 50%;*/
-    /* width: fit-content;  */
-
     width: 150px;
     margin: auto;
     height: 30px;
     border-radius: 500px;
     background-color: var(--blue-light);
     border: none;
+    font-size: 2em;
+    color: white;
+    font-weight: bold;
 }
 .char-right{
     flex: 0.5;
 }
 .prompt{
-    font-size: 1.5rem;
+    font-size: 1.5em;
     display: inline-block;
 }
 .answer{
-    font-size: 2rem;
+    font-size: 2em;
 }
 /********** WORKS **********/
 .works{
     min-height: 100vh;
     background-color: var(--green); /* var(--gary-light); */
+    position: relative;
+}
+.arrow{
+    position: absolute;
+    bottom: -100px;
+    left: 40%;
+
+    width: 200px;
+    height: 200px;
 }
 .works h2{
-    color: var(--gary-light); /* var(--gray-dark) */
+    color: var(--gary-light);
 }
 .works-list{
-    background-color: #4a5f33;
     width: 80vw;
     margin: auto;
     height: 100%;
@@ -351,7 +351,7 @@ nav ul li a{
 }
 .works-list img{
     flex-grow: 1;
-    width: 300px;
+    max-width: 300px;
     padding-bottom: 1rem;
     padding-right: 1rem;
 }
