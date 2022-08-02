@@ -14,12 +14,13 @@ export default {
             story: "Est consectetur labore dolor cupidatat ex est qui laborum laborum in duis aliquip nostrud. Eu nulla ad excepteur dolor nostrud amet elit sunt incididunt cupidatat excepteur",
             //OPTIONAL ATTRIBUTES
             customTags: {
-                "dob": "",
-                "origin": "",
-                "hobbies":"",
+                "dob": "12/1/1",
+                "origin": "nexus",
+                "hobbies":"fishing",
                 "kill count": 2342
             }
-        },{
+        },
+        {
             //REQUIRED ATTRIBTUES
             name: "2 White",
             isAdopted: false,
