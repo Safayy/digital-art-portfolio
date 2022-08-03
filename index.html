@@ -10,32 +10,30 @@
 </head>
 <body >
     <!--------- NAVBAR --------->
-    <div id="navBtn">
-        <i class="fa-solid fa-xmark shownBtn" id="nav-close"></i>
-        <i class="fa-solid fa-bars" id="nav-open"></i>
-    </div> 
-    <nav id="navbar"> <!-- class="nav-mobile"  class="nav-desktop" -->
-        <ul>
-            <li><a href="#contact-me">contact me</a></li>
-            <li><a href="#character-catalog">character catalog</a></li>
-            <li><a href="#works">my works</a></li>
-            <li><a href="#commisions">commision me</a></li>
-        </ul>
-    </nav>
-    <!-- <nav class="nav-desktop">
+    <i class="fa-solid fa-xmark nav-close shownBtn" id="nav-close"></i>
+    <i class="fa-solid fa-bars nav-open" id="nav-open"></i>
+    <nav id="navbar-mobile" class="nav-mobile">
         <ul id="navLinks">
             <li><a href="#contact-me">contact me</a></li>
             <li><a href="#character-catalog">character catalog</a></li>
             <li><a href="#works">my works</a></li>
             <li><a href="#commisions">commision me</a></li>
         </ul>
-    </nav> -->
+    </nav>
+    <nav class="nav-desktop">
+        <ul id="navLinks">
+            <li><a href="#contact-me">contact me</a></li>
+            <li><a href="#character-catalog">character catalog</a></li>
+            <li><a href="#works">my works</a></li>
+            <li><a href="#commisions">commision me</a></li>
+        </ul>
+    </nav>
     <!--------- HERO --------->
-    <section class="hero">
+    <div class="hero">
         <div class="intro" id="intro">
             <div>
                 <!-- <h1 class="intro-title">keyrinq</h1> -->
-                <img src="./assets/imgs/name.png" style="width: 100%;" class="unselectable"/>
+                <img src="./assets/imgs/name.png" style="width: 100%;"/>
                 <p class="intro-subtext">character designer</p>
                 <p class="intro-subtext">digital artist</p> 
             </div>
@@ -58,42 +56,23 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     <!--------- CHARACTER CATALOG --------->
-    <section class="catalog">
+    <div class="catalog">
         <h2 class="subeading">character catalog</h2>
         <div class="catalog-container" id="catalog-container">
         </div>
-    </section>
+    </div>
     <!--------- WORKS --------->
-    <section class="works">
+    <div class="works">
         <img class="arrow" src="./assets/imgs/arrow.png"/>
         <h2>my works!!!</h2>
         <div class="works-list" id="works"></div>
-    </section>
+    </div>
     <!--------- COMMISIONS --------->
-    <section class="commisions">
+    <div class="commisions">
         <h2>commision me</h2>
-            <form action="">
-            <label class="topPrompt" for="requestType">Request Type</label><br/><br/> 
-              <input class="underPrompt" name="requestType"type="radio" id="commision" value="commisiony" checked>
-              <label class="underPrompt" name="requestType"for="commisionx">commision</label><br>
-              <input class="underPrompt" name="requestType"type="radio" id="adoptCharacter" value="adoptCharactery">
-              <label class="underPrompt" name="requestType"for="adoptCharacter">adoptCharacter</label><br>
-              <input class="underPrompt" name="requestType"type="radio" id="animation" value="animationy">
-              <label class="underPrompt" name="requestType"for="animation">animation</label><br>
-              <input class="underPrompt" name="requestType"type="radio" id="other" value="radioy">
-              <label class="underPrompt" name="requestType"for="other">HTML</label><br>
-            <br/><br/> 
-            <label class="topPrompt" for="name">name</label>
-            <input class="topPrompt" type="name" id="name" name="name"><br/><br/>
-            <label class="topPrompt" for="email">email</label>
-            <input class="topPrompt" type="email" id="name" name="name"><br/><br/> 
-            <label class="topPrompt" for="description">description</label>
-            <textarea class="topPrompt"></textarea>
-            <input type="submit" value="Request Commission">
-        </form>
-    </section>
+    </div>
     <script type="module" src="/assets/js/main.js">
 </body>
 </html>
