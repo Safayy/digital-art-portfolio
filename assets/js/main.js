@@ -116,37 +116,44 @@ document.getElementById("slideshow").innerHTML = slideshowElm;
 document.getElementById("works").innerHTML = workElm;
 
 //********** CREATE NAVBAR : open and close the navigation in mobile mode
+let navBar = document.getElementById("navbar");
+let navOpen = document.getElementById("nav-open");
+let navClose = document.getElementById("nav-close");
+const mql = window.matchMedia('(max-width: 700px)');
+mql.onchange = (e) => setNavStyle(e);
+
+navBar.style.display = "none";
+navClose.style.display = "none";
+
 window.onload = function() {
-    document.getElementById("nav-close").onclick = toggleMenu;
-    document.getElementById("nav-open").onclick = toggleMenu;
+    navOpen.onclick = toggleMenu;
+    navClose.onclick = toggleMenu;
 };
-document.getElementById("navbar-mobile").style.display = "none";
-function toggleMenu(){ 
-    let NavBar = document.getElementById("navbar-mobile");
-    let navOpen = document.getElementById("nav-open");
-    let navClose = document.getElementById("nav-close");
+setNavStyle(window.matchMedia('(max-width: 700px)'));
 
-    console.log("Visibility = " + NavBar.style.display);
-
-    if (NavBar.style.display == "none")
-    {
-        navOpen.style.display = "none";
-        navClose.style.display = "block";
-        NavBar.style.display = "block"; 
-    }
-    else
-    {
-        navOpen.display = "block";
-        navClose.display = "none";
-        NavBar.style.display = "none";
-    }
+function setNavStyle(e){
+    if (!e.matches) { //Desktop view: Show navbar 
+        navBar.style.display = "block";
+    } else {//Mobile view: Show button, Hide navbar
+        navBar.style.display = "none";
+        navOpen.style.display = "block";
+        navClose.style.display = "none";
+  }
 }
 
-// fixDesktop( window.matchMedia("(min-screen:700px)") );
-
-// function fixDesktop(x){
-//     if()
-// }
+function toggleMenu(){ 
+    if (navBar.style.display == "none") { //Open condition
+        console.log("opened") 
+        navBar.style.display = "block"; 
+        navOpen.style.display = "none";
+        navClose.style.display = "block";
+    } else { //Closed condition
+        console.log("closed") 
+        navBar.style.display = "none";
+        navOpen.style.display = "block";
+        navClose.style.display = "none";
+    }
+}
 
 //********** SLIDESHOW AUTOMATION
 let slideIndex = 0;

@@ -345,6 +345,35 @@ h2{
 .commisions h2{
     color: var(--white)
 }
+form{
+    background-color: var(--blue-dark);
+    border-radius: 20px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    font-size: 10px;
+}
+form label{
+    color: white;
+}
+form label.topPrompt {
+    font-size: 2em; 
+    text-align: center;
+}
+form input.topPrompt, form textarea.topPrompt{
+    width: 100%;
+}
+form label.underPrompt {
+    font-size: 1.5em; 
+}
+form input[type=submit]{
+    width: 100%;
+    background-color: red;
+    border-radius: 20px;
+    border: none;
+}
+
 /********** FOOTER **********/
 .footer {
     /* padding: 20px; */
@@ -352,147 +381,136 @@ h2{
     background: #ddd;
 }
 
-
-
 /*
 TODO
-bug
-    navlink -> when minimize nav in mobile view, nav disapears in desktop view
-    navbar below .hero
+bugs
     intro padding 10px makes fullscreen mode not pefect 50% 50%
 */
 
-/* NAV DESKTOP */
-nav.nav-desktop i{
-    position: absolute;
-    display: none;
-}
-nav.nav-desktop {
-    z-index: 15;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 80%;
-    margin-left: 0;
-}
-nav.nav-desktop ul{
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row-reverse;
-    justify-content: space-evenly;
-    list-style-type: none;
-    overflow: hidden;
-    visibility: visible;
-}
-nav.nav-desktop ul li{
-    padding-right: 20px;
-}
-nav.nav-desktop ul li a{
-    color: var(--blue-dark);
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 3em;
-}
 
-
-/* NAV MOBILE */
-#nav-close, #nav-open{
-    z-index: 200;
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: block;
-    padding: 5px;
-    font-size: 4rem;
-    color: var(--yellow);
-}
-nav.nav-mobile{
-    position: absolute;
-    top:0;
-    left: 0;
-    z-index: 10;
-    width: 100vw; 
-    /* height: 50%; */
-    /* transition: 0.5s; */
-    background-color: var(--blue-dark);
-}
-nav.nav-mobile ul{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-nav.nav-mobile ul li{
-    list-style: none;
-    margin: 0 auto;
-}
-nav.nav-mobile ul li a{
-    line-height: 3em;
-    color: white;
-    text-decoration: none;
-    font-size: 3em;
-}
-#nav-close{
-    visibility: hidden;
-}
-/* .shownBtn {
-    visibility: visible;
-} */
-
-
-
-
-
-
-
-
-/* DELETE: show in code TODO */
-/*
-.navmobile{
-    visibility: visible;
-}
-.nav-close, .nav-open{
-
-}
-*/
 /********** NAVBAR **********/
-/* 
-@media (max-width: 1200px){
-    nav{
-        width: 100%;
-        font-size: 10px;
+@media (min-width: 700px){ /* DESKTOP NAVBAR */
+    div#navBtn{
+        /* visibility: none; */
+        display: none;   
     }
-}
-@media (max-width: 1100px){
-    nav{
-        font-size: 7px;
+    /* nav.navbar{
+        dis
+    } */
+    nav {
+        z-index: 15;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 80%;
+        margin-left: 0;
     }
-    nav ul li{
-        padding: 0;
-    }
-}
-@media (max-width: 700px){
-
-}
-
-@media (max-width: 700px) {
-
-    .nav-open{
+    nav ul{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        list-style-type: none;
+        overflow: hidden;
         visibility: visible;
     }
+    nav ul li{
+        padding-right: 20px;
+    }
+    nav ul li a{
+        color: var(--blue-dark);
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 3em;
+    }
+}
+@media (min-width:700px)
+and (max-width:1200px){
+    nav{
+        font-size: 5px;
+    }
+    nav ul li{
+        padding-right: 10px;
+    }
+}
+@media (max-width: 700px){ /* MOBILE NAVBAR */
+    div#navBtn {
+        display: block;
+    }
+    #nav-close, #nav-open{
+        z-index: 200;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        padding: 5px;
+        font-size: 4rem;
+        color: var(--yellow);
+    }
+    nav{
+        position: absolute;
+        top:0;
+        left: 0;
+        z-index: 10;
+        width: 100vw; 
+        /* height: 50%; */
+        /* transition: 0.5s; */
+        background-color: var(--blue-dark);
+    }
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    nav ul li{
+        list-style: none;
+        margin: 0 auto;
+    }
+    nav ul li a{
+        line-height: 3em;
+        color: white;
+        text-decoration: none;
+        font-size: 3em;
+    }
+}
+@media (max-width: 700px) {
     .hero {float:none}
 }
-@media (min-width: 700px){
-    nav{
-        width: 100vw;
-    }
+
+
+/**************** MEDIA QUERIES *****************/
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+    /* Styles */
 }
-@media (min-width: 700px){
-    nav {
-        background-color: red;
-    }
-    .nav-open, .nav-close{
-        visibility: hidden;
-    }
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+    /* Styles */
 }
-*/
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+    /* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+    /* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+    /* Styles */
+}
