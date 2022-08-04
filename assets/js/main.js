@@ -1,6 +1,9 @@
 //********** CREATE DATA ELEMENTS : PREVIEW, CHARACTERS, WORKS
-import data from "../data/art.js";
-let source = "./assets/data/art/";
+import data from "/assets/data/art.js";
+let source = "/assets/data/art/";
+console.log(data);
+console.log(source);
+
 let slideLinks = data["preview"];
 let charData = data["characters"];
 let workLinks = data["works"];
