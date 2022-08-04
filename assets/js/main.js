@@ -31,7 +31,10 @@ document.getElementById("catalog-container").appendChild(charsContainer);
 function char(name, faceLink, bodyLink, story, customTags){
     //Adopt Click
     function adoptChar(){
-        console.log("adopted!");
+        var href = "#commisionSection"
+        window.location=href;
+        document.getElementById("adoptCharacter").checked = true;
+        document.getElementById("description").innerText = `Character = ${charName.innerText}`;
     }
 
     //CREATE 
@@ -128,6 +131,7 @@ navClose.style.display = "none";
 window.onload = function() {
     navOpen.onclick = toggleMenu;
     navClose.onclick = toggleMenu;
+    document.getElementById("submitFormBtn").onclick = submitForm;
 };
 setNavStyle(window.matchMedia('(max-width: 700px)'));
 
@@ -155,12 +159,6 @@ function toggleMenu(){
     }
 }
 
-// fixDesktop( window.matchMedia("(min-screen:700px)") );
-
-// function fixDesktop(x){
-//     if()
-// }
-
 //********** SLIDESHOW AUTOMATION
 let slideIndex = 0;
 
@@ -175,8 +173,6 @@ for(let i=0; i<document.getElementsByClassName("slide").length; i++){
     parentDiv.appendChild(dot);
 }
 document.getElementById("slideshow-traverser").appendChild(parentDiv);
-
-
 
 //SHOW SLIDES
 await showSlides();
@@ -196,3 +192,113 @@ function showSlides() {
     dots[slideIndex-1].className += " active";
     setTimeout(showSlides, 2000); //200ms = 2s
 }
+
+//Respond form
+
+function submitForm(){
+    let type = document.querySelector('input[name="requestType"]:checked');
+    let name = document.getElementById('name');
+    let email = document.getElementById('email');
+    // let imageSample = document.getElementById('imageSample');
+    let description = document.getElementById('description');
+    let responseText = document.getElementById('responseText');
+
+    //Verify that no necessary inputs are null
+    responseText.innerHTML = "";
+    responseText.classList.add("errorText");
+    console.log(responseText)
+    if (name.value.trim() == "") {
+        responseText.innerHTML += "* Please enter your name<br/>";
+     }
+    if (email.value.trim() == "") {
+        responseText.innerHTML += "* Please enter your email<br/>";
+    }
+    if (description.value.trim() == "") {
+        responseText.innerHTML += "* Please enter a description<br/>";
+    }
+    if(responseText.innerHTML != "")
+        return false;
+
+    //Build email
+    let emailText =
+    `Dear ${name.value},<br><br>
+    You're request for a ${type.value} has been sent been received.<br>
+    You will receive a response shortly with information on whether your request is accepted and a price quote.<br><br>
+    
+    Details for your request are below:<br>
+    Type = ${type.value}<br>
+    Description = ${description.value}<br>
+ 
+    Thank you for the commision request! <3<br><br>
+
+    Sincerely,<br>
+    Keyrinq AutoManager`;//   Sample Image = ${imageSample.value}<br><br>
+    emailText = emailText.replace(/(\r\n|\n|\r)/gm, "");
+
+    //Send email request
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://api.sendinblue.com/v3/smtp/email");
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.setRequestHeader("Api-Key", "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");
+
+    xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+        console.log(xhr.status);
+        console.log(xhr.responseText);
+    }};
+
+    let data = `{  
+        "sender":{  
+           "name":"Keyrinq",
+           "email":"keyrinqart@gmail"
+        },
+        "to":[  
+           {  
+              "email":"${email.value}",
+              "name":"${name.value}"
+           },
+           {  
+              "email":"keyrinqart@gmail.com",
+              "name":"Keyrinq"
+           }
+        ],
+        "subject":"Keyrinq ${type.value}",
+        "htmlContent":"<html><head></head><body>${emailText}</body></html>"
+    }`;
+    
+    xhr.send(data); //media attachment?
+
+    // if(xhr.status=="400"){
+    //     responseText.innerHTML += "* Invalid email address<br/>";
+    //     console.log("RETURNING FALSE")
+
+    //     return false;
+    // }
+
+    //On sucessful form submit
+    let topElm = document.getElementsByClassName("topPrompt");
+    let underElm = document.getElementsByClassName("underPrompt");
+
+    for(let i=0; i<topElm.length; i++)
+        topElm[i].style.display = "none";
+    for(let i=0; i<underElm.length; i++)
+        underElm[i].style.display = "none"; 
+    responseText.classList.add("sucessText");
+    document.getElementById("form").classList.remove("form");
+    responseText.innerHTML = "Commision Request Sucessful";
+    document.getElementById("submitFormBtn").style.display = "none";
+}
+
+// $.ajax({
+//     url: 'https://api.wit.ai/message?v=20140826&q=',
+//     beforeSend: function(xhr) {
+//          xhr.setRequestHeader("Authorization", "Bearer 6QXNMEMFHNY4FJ5ELNFMP5KRW52WFXN5")
+//     }, success: function(data){
+//         alert(data);
+//         //process the JSON data etc
+//     }
+// })
+
+//Adopt Character
+

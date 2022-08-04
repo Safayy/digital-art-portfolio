@@ -14,29 +14,21 @@
         <i class="fa-solid fa-xmark shownBtn" id="nav-close"></i>
         <i class="fa-solid fa-bars" id="nav-open"></i>
     </div> 
-    <nav id="navbar"> <!-- class="nav-mobile"  class="nav-desktop" -->
+    <nav id="navbar"> 
         <ul>
-            <li><a href="#contact-me">contact me</a></li>
-            <li><a href="#character-catalog">character catalog</a></li>
-            <li><a href="#works">my works</a></li>
-            <li><a href="#commisions">commision me</a></li>
+            <li><a href="#heroSection">contact me</a></li>
+            <li><a href="#catalogSection">character catalog</a></li>
+            <li><a href="#workSection">my works</a></li>
+            <li><a href="#commisionSection">commision me</a></li>
         </ul>
     </nav>
-    <!-- <nav class="nav-desktop">
-        <ul id="navLinks">
-            <li><a href="#contact-me">contact me</a></li>
-            <li><a href="#character-catalog">character catalog</a></li>
-            <li><a href="#works">my works</a></li>
-            <li><a href="#commisions">commision me</a></li>
-        </ul>
-    </nav> -->
-    <!--------- HERO --------->
-    <section class="hero">
-        <div class="intro" id="intro">
-            <div>
-                <!-- <h1 class="intro-title">keyrinq</h1> -->
-                <img src="./assets/imgs/name.png" style="width: 100%;" class="unselectable"/>
-                <p class="intro-subtext">character designer</p>
+<!--------- HERO --------->
+<section id="heroSection" class="hero">
+    <div class="intro" id="intro">
+        <div>
+            <!-- <h1 class="intro-title">keyrinq</h1> -->
+            <img src="./assets/imgs/name.png" style="width: 100%;" class="unselectable" />
+            <p class="intro-subtext">character designer</p>
                 <p class="intro-subtext">digital artist</p> 
             </div>
             <ul class="intro-socials">
@@ -44,7 +36,7 @@
                 <li><a href="#smpl"> <i class="fa-brands fa-square-instagram"></i>      </a></li>
                 <li><a href="#smpl"> <i class="fa-brands fa-square-twitter"></i>        </a></li>
                 <li><a href="#smpl"> <i class="fa-solid fa-globe"></i>                  </a></li>
-            </ul>
+            </ul>   
         </div>
         <div class="preview">
             <img class="art-top unselectable" src="./assets/imgs/lines.svg"/>
@@ -60,39 +52,42 @@
         </div>
     </section>
     <!--------- CHARACTER CATALOG --------->
-    <section class="catalog">
+    <section id="catalogSection" class="catalog">
         <h2 class="subeading">character catalog</h2>
         <div class="catalog-container" id="catalog-container">
         </div>
     </section>
     <!--------- WORKS --------->
-    <section class="works">
+    <section class="works" id="workSection"> 
         <img class="arrow" src="./assets/imgs/arrow.png"/>
         <h2>my works!!!</h2>
         <div class="works-list" id="works"></div>
     </section>
     <!--------- COMMISIONS --------->
-    <section class="commisions">
+    <section id="commisionSection" class="commisions">
         <h2>commision me</h2>
-            <form action="">
-            <label class="topPrompt" for="requestType">Request Type</label><br/><br/> 
-              <input class="underPrompt" name="requestType"type="radio" id="commision" value="commisiony" checked>
-              <label class="underPrompt" name="requestType"for="commisionx">commision</label><br>
-              <input class="underPrompt" name="requestType"type="radio" id="adoptCharacter" value="adoptCharactery">
-              <label class="underPrompt" name="requestType"for="adoptCharacter">adoptCharacter</label><br>
-              <input class="underPrompt" name="requestType"type="radio" id="animation" value="animationy">
-              <label class="underPrompt" name="requestType"for="animation">animation</label><br>
-              <input class="underPrompt" name="requestType"type="radio" id="other" value="radioy">
-              <label class="underPrompt" name="requestType"for="other">HTML</label><br>
-            <br/><br/> 
-            <label class="topPrompt" for="name">name</label>
-            <input class="topPrompt" type="name" id="name" name="name"><br/><br/>
-            <label class="topPrompt" for="email">email</label>
-            <input class="topPrompt" type="email" id="name" name="name"><br/><br/> 
-            <label class="topPrompt" for="description">description</label>
-            <textarea class="topPrompt"></textarea>
-            <input type="submit" value="Request Commission">
-        </form>
+            <div id="form" class="form" action="./assets/backend/form.php">
+                <label class="topPrompt" for="requestType">Request Type</label><br/><br/> 
+                  <input class="underPrompt" name="requestType"type="radio" id="commision" value="commision" checked>
+                  <label class="underPrompt" name="requestType"for="commisionx">commision</label><br>
+                  <input class="underPrompt" name="requestType"type="radio" id="adoptCharacter" value="adoptCharacter">
+                  <label class="underPrompt" name="requestType"for="adoptCharacter">adopt a character</label><br>
+                  <input class="underPrompt" name="requestType"type="radio" id="animation" value="animation">
+                  <label class="underPrompt" name="requestType"for="animation">animation</label><br>
+                  <input class="underPrompt" name="requestType"type="radio" id="other" value="radio">
+                  <label class="underPrompt" name="requestType"for="other">other</label><br>
+                <br/><br/> 
+                <label class="topPrompt" for="name">your name</label>
+                <input class="topPrompt" type="name" id="name" name="name"><br/><br/>
+                <label class="topPrompt" for="email">your email</label>
+                <input class="topPrompt" type="email" id="email" name="imageSample"><br/><br/> 
+                <!-- <label class="topPrompt" for="imageSample">sample image</label>
+                <input class="topPrompt" type="file" id="imageSample" name="imageSample"><br/><br/>  -->
+                <label class="topPrompt" for="description">description</label>
+                <textarea class="topPrompt" cols="1" rows="10" id="description"></textarea><br/><br/>
+                <p id="responseText"></p>
+                <input type="submit" value="Request Commission" id="submitFormBtn">
+            </div>
     </section>
     <script type="module" src="/assets/js/main.js">
 </body>

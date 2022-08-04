@@ -33,6 +33,11 @@ h2{
     text-align: left;
     padding-left: 2em;
 }
+@media (max-width:700px) {
+    h2 {
+        font-size: 2em;
+    }
+}
 .unselectable {
     user-drag: none;
     -webkit-user-drag: none;
@@ -339,14 +344,15 @@ h2{
 
 /********** COMMISIONS **********/
 .commisions{
-    height: 100vh;
     background-color: var(--blue-light);
+    padding-bottom: 10vh;
 }
 .commisions h2{
     color: var(--white)
 }
-form{
-    background-color: var(--blue-dark);
+.form{
+    position: relative;
+    background-color: var(--yellow);
     border-radius: 20px;
     padding: 20px;
     width: 80%;
@@ -354,26 +360,53 @@ form{
     margin: auto;
     font-size: 10px;
 }
-form label{
-    color: white;
+.form label, input[type=file], .form input[type=submit]{
+    color: var(--blue-dark);
+    font-weight: 600;
 }
-form label.topPrompt {
+.form label.topPrompt{
     font-size: 2em; 
     text-align: center;
 }
-form input.topPrompt, form textarea.topPrompt{
+.form input.topPrompt, .form textarea.topPrompt{
     width: 100%;
+    font-weight: 600;
 }
-form label.underPrompt {
+.form label.underPrompt {
     font-size: 1.5em; 
 }
-form input[type=submit]{
-    width: 100%;
-    background-color: red;
+.form input[type=submit]{
+    background-color: var(--green);
+    padding: 15px;
     border-radius: 20px;
     border: none;
+    font-size: 2em;
 }
-
+.errorText{
+    color: red;
+    font-weight: 600;
+    font-size: 1.5em; 
+}
+.sucessText{
+    color: var(--blue-dark);
+    font-weight: 600;
+    font-size: 2em; 
+    text-align: center;
+    border-radius: 5px;
+    background-color: var(--yellow);
+    /* width: fit-content; */
+    padding: 10px;
+    margin: auto;
+}
+input{
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+}
+textarea{
+    resize: none;
+    padding: 10px;
+}
 /********** FOOTER **********/
 .footer {
     /* padding: 20px; */
@@ -476,41 +509,4 @@ and (max-width:1200px){
 }
 @media (max-width: 700px) {
     .hero {float:none}
-}
-
-
-/**************** MEDIA QUERIES *****************/
-/* iPads (landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : landscape) {
-    /* Styles */
-}
-
-/* iPads (portrait) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) {
-    /* Styles */
-}
-
-/* Desktops and laptops ----------- */
-@media only screen 
-and (min-width : 1224px) {
-    /* Styles */
-}
-
-/* Large screens ----------- */
-@media only screen 
-and (min-width : 1824px) {
-    /* Styles */
-}
-
-/* iPhone 4 ----------- */
-@media
-only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {
-    /* Styles */
 }
