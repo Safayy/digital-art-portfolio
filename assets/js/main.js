@@ -243,7 +243,7 @@ function submitForm(){
     xhr.open("POST", "https://api.sendinblue.com/v3/smtp/email");
     xhr.setRequestHeader("Accept", "application/json");
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.setRequestHeader("Api-Key", "API-KEY-SENDINBLUE");
+    xhr.setRequestHeader("Api-Key", API-KEY-SENDINBLUE);
 
     xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
