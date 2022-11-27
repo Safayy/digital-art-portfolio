@@ -7,7 +7,7 @@ export default {
     "characters":[
         {
             //REQUIRED ATTRIBTUES
-            name: "Rebecca White",
+            name: "Rebecca Black",
             isAdopted: false,
             faceLink: "char1-face.png",
             bodyLink: "char1-body.png",
